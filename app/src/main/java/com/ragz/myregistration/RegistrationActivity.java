@@ -11,8 +11,8 @@ import android.widget.Toast;
 public class RegistrationActivity extends AppCompatActivity {
 
     private Button btnSubmit;
-    private EditText etFullName,etEmail,etPass1,etPass2,etPhone,etDOB;
-    private String name,email,pass1,pass2,phone;
+    private EditText etFullName, etEmail, etPass1, etPass2, etPhone, etDOB;
+    private String name, email, pass1, pass2, phone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,36 +38,32 @@ public class RegistrationActivity extends AppCompatActivity {
     }
 
     public void submit(View view) {
+
         name = etFullName.getText().toString();
         email = etEmail.getText().toString();
         pass1 = etPass1.getText().toString();
         pass2 = etPass2.getText().toString();
         phone = etPhone.getText().toString();
+        if ((Patterns.EMAIL_ADDRESS.matcher(email).matches()) &&
+                (validateName(name)) && (validatePhone(phone)) &&
+                ((pass1.length() >= 6) && (pass2.length() >= 6)) && (pass1.equals(pass2))) {
+            sendEmail();
+        } else {
+            Toast.makeText(getBaseContext(),"Not Sent",Toast.LENGTH_SHORT).show();
+        }
+    }
 
-        if (validateName(name)) {
-            Toast.makeText(getBaseContext(), "Valid Name", Toast.LENGTH_SHORT).show();
-        } else{
-            Toast.makeText(getBaseContext(), "Name Not valid", Toast.LENGTH_SHORT).show();
-        }
-        if (Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            Toast.makeText(getBaseContext(), "valid email", Toast.LENGTH_SHORT).show();
-        } else{
-            Toast.makeText(getBaseContext(), "Email Not valid", Toast.LENGTH_SHORT).show();
-        }
-        if ((pass1.length()>=6)&&(pass2.length()>=6)) {
-            if (pass1.equals(pass2)) {
-                Toast.makeText(getBaseContext(), "password validated", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(getBaseContext(), "password don't match", Toast.LENGTH_SHORT).show();
-            }
-        } else {
-            Toast.makeText(getBaseContext(), "password must contain min 6 characters", Toast.LENGTH_SHORT).show();
-        }
-        if (validatePhone(phone)) {
-            Toast.makeText(getBaseContext(), "Phone Number is Valid", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(getBaseContext(), "Number not Valid", Toast.LENGTH_SHORT).show();
+    private void sendEmail() {
+        try {
+            String to = email;
+            String subject = "Successful Registration";
+            String message = "Registration is Successful. Welcome to our Webpage";
+            SendMailActivity sm = new SendMailActivity(this, to, subject, message);
+            sm.execute();
+        } catch (Exception e) {
+            Toast.makeText(getBaseContext(), "Email sending failed", Toast.LENGTH_SHORT).show();
         }
 
     }
+
 }
