@@ -29,22 +29,6 @@
         android:inputType="textEmailAddress" />
 
     <EditText
-        android:id="@+id/etPass1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Enter Password"
-        android:inputType="textPassword" />
-
-    <EditText
-        android:id="@+id/etPass2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="ReEnter Password"
-        android:inputType="textPassword" />
-
-    <EditText
         android:id="@+id/etPhone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

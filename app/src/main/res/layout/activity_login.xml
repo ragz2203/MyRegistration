@@ -29,12 +29,14 @@
         android:id="@+id/etLoginPassword" />
 
     <Button
+        android:onClick="userLogin"
         android:text="Login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/btnLogin" />
 
     <Button
+        android:onClick="gotoSignUp"
         android:text="Register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
