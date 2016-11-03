@@ -19,7 +19,7 @@ public class RegistrationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
 
-        btnSubmit = (Button) findViewById(R.id.btnSubmit);
+        btnSubmit = (Button) findViewById(R.id.btnRegister);
         etFullName = (EditText) findViewById(R.id.etFullName);
         etEmail = (EditText) findViewById(R.id.etEmail);
         etPass1 = (EditText) findViewById(R.id.etPass1);
@@ -58,8 +58,8 @@ public class RegistrationActivity extends AppCompatActivity {
             String to = email;
             String subject = "Successful Registration";
             String message = "Registration is Successful. Welcome to our Webpage";
-            SendMailActivity sm = new SendMailActivity(this, to, subject, message);
-            sm.execute();
+            SendMailActivity sendMail = new SendMailActivity(this, to, subject, message);
+            sendMail.execute();
         } catch (Exception e) {
             Toast.makeText(getBaseContext(), "Email sending failed", Toast.LENGTH_SHORT).show();
         }
