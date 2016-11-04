@@ -15,7 +15,7 @@ import javax.mail.internet.MimeMessage;
  * Created by Ragz on 02-Nov-16.
  */
 
-public class SendMailActivity extends AsyncTask<Void, Void, Void> {
+public class SendMail extends AsyncTask<Void, Void, Void> {
 
     private Context context;
     private Session session;
@@ -23,7 +23,7 @@ public class SendMailActivity extends AsyncTask<Void, Void, Void> {
     private String subject;
     private String message;
 
-    public SendMailActivity(Context context, String email, String subject, String message) {
+    public SendMail(Context context, String email, String subject, String message) {
         this.context = context;
         this.email = email;
         this.subject = subject;

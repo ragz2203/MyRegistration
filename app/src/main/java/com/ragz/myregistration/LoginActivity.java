@@ -32,16 +32,14 @@ public class LoginActivity extends AppCompatActivity {
         Stored_Pass = preferences.getString("Pass", "");
     }
 
-    public void toaster(){
+    public void toaster() {
         Toast.makeText(getBaseContext(), "hey " + Stored_ID + " " + Stored_Pass, Toast.LENGTH_SHORT).show();
     }
 
     private boolean logValidate() {
         LogId = etLoginUserID.getText().toString();
         LogPass = etLoginPassword.getText().toString();
-
         checkData();
-
         if (LogId.isEmpty() || LogPass.isEmpty()) {
             Toast.makeText(getBaseContext(), "Enter the Details", Toast.LENGTH_SHORT).show();
         } else {

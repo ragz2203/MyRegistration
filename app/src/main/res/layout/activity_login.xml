@@ -4,41 +4,45 @@
     android:id="@+id/activity_login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.ragz.myregistration.LoginActivity"
-    android:orientation="vertical">
+    tools:context="com.ragz.myregistration.LoginActivity">
 
 
     <EditText
+        android:drawableStart="@drawable/ic_action_identity"
+        android:drawableLeft="@drawable/ic_action_identity"
+        android:id="@+id/etLoginUserID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
+        android:ems="10"
         android:hint="Enter your Mail-Id"
-        android:ems="10"
-        android:id="@+id/etLoginUserID" />
+        android:inputType="textEmailAddress" />
 
     <EditText
+        android:drawableStart="@drawable/ic_action_pass"
+        android:drawableLeft="@drawable/ic_action_pass"
+        android:id="@+id/etLoginPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:hint="Password"
         android:ems="10"
-        android:id="@+id/etLoginPassword" />
+        android:hint="Password"
+        android:inputType="textPassword" />
 
     <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:onClick="userLogin"
-        android:text="Login"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnLogin" />
+        android:text="Login" />
 
     <Button
-        android:onClick="gotoSignUp"
-        android:text="Register"
+        android:id="@+id/btnSignUp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/btnSignUp" />
+        android:onClick="gotoSignUp"
+        android:text="Register" />
 </LinearLayout>

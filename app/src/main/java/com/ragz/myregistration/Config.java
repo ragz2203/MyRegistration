@@ -6,7 +6,7 @@ package com.ragz.myregistration;
 
 public class Config extends javax.mail.Authenticator {
 
-    public static final String EMAIL ="zukathar@gmail.com";
-    public static final String PASSWORD ="firenation";
+    public static final String EMAIL ="someone@example.com";
+    public static final String PASSWORD ="password";
 
 }
